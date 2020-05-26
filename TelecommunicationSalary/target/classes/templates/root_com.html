@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员页面</title>
+    <link rel="shortcut icon" href="img/dianxin.jpeg" type="image/x-icon"/>
+    <style>
+        body{
+            margin: 0;
+            background-color: lightgray;
+        }
+        .top{
+            /*border: 1px solid blue;*/
+            width: 1000px;
+            height: 56px;
+            margin: 0 auto;
+            background-color: orange;
+        }
+        .upload_file{
+            /*border: 1px solid blue;*/
+            width: 1000px;
+            height: 150px;
+            margin:15px auto;
+            background-color: #eeeeee;
+        }
+        .search{
+            /*border: 1px solid blue;*/
+            width: 1000px;
+            height: 300px;
+            margin:15px auto;
+            background-color: #eeeeee;
+        }
+        .register{
+            /*border: 1px solid blue;*/
+            width: 1000px;
+            height: 300px;
+            margin: 15px auto;
+            background-color: #eeeeee;
+        }
+        button{
+            width: 80px;
+            height: 50px;
+            font-size: 30px;
+            background-color: cornflowerblue;
+        }
+        table{
+            border: 1px solid black;
+            width: 600px;
+            height: 56px;
+            margin-left: 200px;
+            font-size: 30px;
+
+
+        }
+        td{
+            border: 1px solid black;
+        }
+        input{
+            font-size: 20px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <p style="margin: 0; padding: 5px 0px 5px 380px;font-size: 40px">信息管理系统</p>
+    </div>
+
+    <div class="upload_file">
+        <h1>&nbsp&nbsp上传员工工资表：</h1>
+        <form action="" method="post" accept-charset="UTF-8">
+            <input style="font-size: 20px; margin: auto 100px auto 200px" type="file"/>
+            <button type="submit">上传</button>
+        </form>
+    </div>
+
+
+    <div class="register">
+        <h1>&nbsp&nbsp员工信息注册与更新：</h1>
+        <form action="" method="post" accept-charset="UTF-8">
+            <table>
+                <thead>
+                    <tr>
+                        <td>工号</td>
+                        <td>姓名</td>
+                        <td>部门</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="工号"/></td>
+                        <td><input type="text" name="姓名"/></td>
+                        <td><input type="text" name="部门"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button style="margin-left: 400px;margin-top: 20px; width: 200px">提交</button>
+        </form>
+    </div>
+
+    <div class="search">
+        <h1>&nbsp&nbsp员工工资查询：</h1>
+        <form action="" method="post" accept-charset="UTF-8">
+            <table>
+                <thead>
+                <tr>
+                    <td>工号</td>
+                    <td>年份</td>
+                    <td>月份</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" name="工号"/></td>
+                    <td>
+                        <select style="width: 200px;height: 30px;font-size: 20px">
+                            <option>年份</option>
+                            <option th:each="l:${list_y}" th:text="${l}"></option>
+                        </select>
+                    </td>
+                    <td>
+                        <select style="width: 200px;height: 30px;font-size: 20px">
+                            <option>月份</option>
+                            <option th:each="l:${list_m}" th:text="${l}"></option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button style="margin-left: 400px;margin-top: 20px; width: 200px">查询</button>
+        </form>
+    </div>
+
+</body>
+</html>

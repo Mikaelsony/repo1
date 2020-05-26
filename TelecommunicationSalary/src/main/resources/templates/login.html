@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    input
+    {
+        font-size: 30px;
+        border-width: 2.3px;
+
+
+    }
+    body
+    {
+        background-color: #f7f9fb;
+    }
+
+    div.group0
+    {
+        background-color: white;
+        width:350px;
+        height:450px;
+        position:fixed;
+        margin:auto;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        padding-left: 40px;
+    }
+    div.group1
+    {
+        width:350px;
+    }
+    h4
+    {
+        font-size: 30px;
+    }
+</style>
+<body>
+<!--    <a th:href="@{/hello(id=1)}">1</a>-->
+    <br/>
+    <div class="group0">
+        <h4>登陆</h4>
+        <form action="/hello" method="post">
+            <p> 请输入账号：</p>
+            <input type="text" name="name"/><br/>
+            <p> 请输入密码：</p>
+            <input type="password" name="passwd"/><br/>
+            <div class="group1">
+                <button type="submit" class="btn btn-primary btn-block">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

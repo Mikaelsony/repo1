@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <link rel="shortcut icon" href="img/dianxin.jpeg" type="image/x-icon"/>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0 0;
+            border: 0px;
+        }
+        .div1{
+            /*border: 1px solid blue;*/
+            background-color: lightgray;
+            width: 100%;
+            height: 56px;
+        }
+        .div2,.div3,.div5{
+            float: right;
+        }
+        .div2{
+            /*border: 1px solid black;*/
+            width: 13%;
+            height: 56px;
+            /*background-image: -wekbit-gradient(linear,0 100%,57.7% 100%,from(rgb(49,90,212)),to(rgb(60,141,223)));*/
+            background-color: ;
+            /*position: absolute;*/
+            /*right: 0px;*/
+
+
+        }
+        .div3{
+            /*border: 1px solid black;*/
+            width: 30%;
+            height: 56px;
+            position: absolute;
+            left: -45px;
+            background-color: orange;
+        }
+        .div4{
+            border: 1px solid blue;
+            width: 1300px;
+            height: 600px;
+            margin:  50px auto;
+            background-color: white;
+        }
+        .div5{
+            /*border: 1px solid black;*/
+            width: 53%;
+            height: 56px;
+            position: absolute;
+            left: 450px;
+            background-color: cornflowerblue;
+        }
+        .li1{
+            display:inline;
+            padding-left: 100px;
+            padding-bottom: 30px;
+            font-size: 20px;
+        }
+        .li2{
+            display:inline;
+            padding-left: 100px;
+            padding-bottom: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">
+            <p style="padding-left: 20px">欢迎：<b th:text="${name}">一二三四</b></p>
+        </div>
+        <div class="div5">
+            <form action="/hello" accept-charset="UTF-8">
+                <ul>
+                    <li style="display:inline;">选择查询条件：</li>
+                    <li class="li1">
+                        <select style="width: 100px;height: 30px;font-size: 20px" name="id">
+                            <option>年份</option>
+                            <option th:each="l:${list_y}" th:text="${l}"></option>
+                        </select>
+                    </li>
+                    <li class="li1">
+                        <select style="width: 100px;height: 30px;font-size: 20px" name="name">
+                            <option>月份</option>
+                            <option th:each="l:${list_m}" th:text="${l}"></option>
+                        </select>
+                    </li>
+                    <li class="li2">
+                        <!--                    <button style="width: 60px;height: 30px;" type="submit">查询</button>-->
+                        <button style="width: 60px;height: 30px;font-size: 20px" type="submit" >查询</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="div3">
+            <p style="font-size: 40px;margin:5px 0px;text-align: center">个人工资查询系统</p>
+        </div>
+    </div>
+    <div class="div4">
+
+    </div>
+</body>
+</html>
